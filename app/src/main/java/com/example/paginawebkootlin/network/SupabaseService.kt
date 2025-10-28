@@ -1,4 +1,4 @@
-package com.example.paginawebkootlin
+package com.example.paginawebkootlin.network
 
 import retrofit2.http.*
 

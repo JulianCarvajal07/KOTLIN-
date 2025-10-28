@@ -18,8 +18,8 @@ import com.example.paginawebkootlin.views.login
 fun AppNavigation() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "inicioSesion") {
-        composable("inicioSesion") { login(navController) }
+    NavHost(navController = navController, startDestination = "inicio") {
+        composable("inicio") { login(navController) }
         composable("home") { HomeView(navController) }
         composable("Config") { ConfiguracionApp(navController) }
         composable("Product") { RegistroProducto(navController) }

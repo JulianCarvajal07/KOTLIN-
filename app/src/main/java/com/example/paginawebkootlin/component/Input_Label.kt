@@ -12,19 +12,19 @@ import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label
 import org.w3c.dom.Text
 
 @Composable
-fun CampoTextoEjemplo(label: @Composable () -> Unit, placeholder: @Composable () -> Unit
+fun CampoTexto(
+    value: String,
+    onValueChange: (String) -> Unit,
+    label: @Composable () -> Unit,
+    placeholder: @Composable () -> Unit
 ) {
-    var texto by remember { mutableStateOf("") }  // Estado que guarda el valor del input
-
     OutlinedTextField(
-        value = texto,                       // El valor actual del campo
-        onValueChange = { texto = it },      // Se ejecuta cada vez que cambia el texto
-        label = label,         // 👈 Este es el label
-        placeholder =  placeholder , // 👈 Texto dentro del campo cuando está vacío
+        value = value,
+        onValueChange = onValueChange,
+        label = label,
+        placeholder =  placeholder,
         modifier = Modifier
-            .fillMaxWidth(0.8f) //80% del padre
+            .fillMaxWidth(0.8f)
             .padding(8.dp)
-
-
     )
 }

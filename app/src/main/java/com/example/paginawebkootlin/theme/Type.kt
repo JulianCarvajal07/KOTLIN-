@@ -1,4 +1,4 @@
-package com.example.paginawebkootlin.ui.theme
+package com.example.paginawebkootlin.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

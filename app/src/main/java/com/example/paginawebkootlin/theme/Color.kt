@@ -1,4 +1,4 @@
-package com.example.paginawebkootlin.ui.theme
+package com.example.paginawebkootlin.theme
 
 import androidx.compose.ui.graphics.Color
 

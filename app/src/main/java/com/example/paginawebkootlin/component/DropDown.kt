@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.paginawebkootlin.repository.UserRepository
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -110,12 +111,20 @@ fun DropdownMenu(navController: NavController) {
                     navController.navigate("Ayuda")
                 }
             )
+
             DropdownMenuItem(
                 text = { Text("Cerrar Sesion") },
                 leadingIcon = { Icon(Icons.Default.Close, contentDescription = null) },
                 onClick = {
+                    // Limpiar estado de sesión
+                    UserRepository.logout()
+                    // Cerrar dropdown
                     expanded = false
-                    navController.navigate("inicioSesion")
+                    // Navegar al login
+                    navController.navigate("inicio") {
+                        // Evita que el usuario pueda volver a home con el botón "atrás"
+                        popUpTo("home") { inclusive = true }
+                    }
                 }
             )
 
